@@ -11,6 +11,7 @@ if (process.env.REDISTOGO_URL) {
   client.auth(rtg.auth.split(":")[1]);
 } else {
   var client = redis.createClient();
+  
   client.select((process.env.NODE_ENV || 'development').length);
 }
 // End Redis Connection
@@ -21,7 +22,7 @@ router.route('/')
   .get(function(request, response){
     client.hkeys('cities', function(error, names) {
       if(error) throw error;
-
+      
       response.json(names);
     });
   })

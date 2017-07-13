@@ -4,19 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha test.js",
+    "test": "SET NODE_ENV=test&& mocha -w app.js test.js",
     "start": "node bin/www"
   },
   "author": "Glursh",
   "license": "",
   "dependencies": {
     "body-parser": "^1.9.3",
-    "ejs": "^1.0.0",
-    "express": "^4.10.4",
-    "redis": "^0.12.1"
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "redis": "^2.7.1"
   },
   "devDependencies": {
-    "mocha": "^2.0.1",
-    "supertest": "^0.15.0"
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0"
   }
 }
